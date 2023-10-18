@@ -1,0 +1,341 @@
+/* SUMMARY
+    1. GLOBAL
+    2. LAYOUT
+    3. SECTION
+    4. CARD
+*/
+
+/*** 1. GLOBAL ***/
+
+/* Reset / Normalize
+   ============================= */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;
+                                                                                                                                                                                                                                                                                                                                      }  b,strong{font-weight:bolder}  code,kbd,samp{font-family:monospace,monospace;font-size:1em}  small{font-size:80%}  sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}  sub{bottom:-.25em}  sup{top:-.5em}  img{border-style:none}  button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}  button,input{overflow:visible}  button,select{text-transform:none}  [type=button],[type=reset],[type=submit],button{-webkit-appearance:button}  [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}  [type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}  fieldset{padding:.35em .75em .625em}  legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}  progress{vertical-align:baseline}  textarea{overflow:auto}  [type=checkbox],[type=radio]{box-sizing:border-box;padding:0}  [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}  [type=search]{-webkit-appearance:textfield;outline-offset:-2px}  [type=search]::-webkit-search-decoration{-webkit-appearance:none}  ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}  details{display:block}  summary{display:list-item}  template{display:none}  [hidden]{display:none}
+
+/* Variables
+   ============================= */
+
+:root {
+    --color-primary: #FF6565;
+    --color-blue: #071629;
+    --color-white: #fff;
+    --color-grey: #979797;
+
+    --text-color-primary: var(--color-white);
+    --text-color-secondary: var(--color-blue);
+
+    --font-family-base: 'Source Sans Pro';
+
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 16px;
+    --font-size-x-large: 18px;
+    --font-size-xx-large: 32px;
+    --font-size-xxx-large: 46px;
+
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+    --font-weight-bolder: 700;
+
+    --line-height-small: 26px;
+    --line-height-base: normal;
+
+    /** HEADER **/
+    --header-padding: 5px 0 5px;
+    --header-margin: 28px 200px 300px 201px;
+
+    /** NAVBAR **/
+    --nav-item-font-family: var(--font-family-base);
+    --nav-item-font-weight: var(--font-weight-bolder);
+    --nav-item-font-size: var(--font-size-small);
+    --nav-item-letter-spacing: .04rem;
+    --nav-item-display: flex;
+    --nav-item-margin: 28px 200px 100px 201px;
+    --nav-item-link-hover: var(--color-primary);
+    --nav-item-text-color: var(--text-color-primary);
+    --nav-item-text-decoration: none;
+
+    /** BUTTON **/
+    --button-display: inline-block;
+    --button-padding: 13px 31px;
+    --button-margin:0;
+    --button-color: var(--color-primary);
+    --button-text-decoration: none;
+    --button-font-size: var(--font-size-medium);
+    --button-border-radius: 22px;
+
+    /** BACKGROUND IMAGE **/
+    --background-image-size: cover;
+    --background-image-repeat: no-repeat;
+    --background-image-position: center;
+    --background-image-color: var(--color-white);
+    --background-image-height: 800px;
+
+    /** SECTION **/
+    --section-margin:0 auto 115px;
+    --section-width: 637px;
+    --section-header-padding: 0 30px 0;
+    --section-header-align: center;
+    --section-title-font-size: var(--font-size-xx-large);
+    --section-title-font-weight: var(--font-weight-bolder);
+    --section-title-line-height: var(--line-height-base);
+    --section-title-margin: 0;
+    --section-title-color: var(--text-color-primary);
+    --section-tagline-color: var(--text-color-primary);
+    --section-tagline-font-weight: var(--font-weight-bolder);
+    --section-tagline-font-size: var(--font-size-large);
+    --section-tagline-margin: 0 0 40px 0;
+    --section-body-padding: 2rem 0 4rem;
+    --section-footer-padding: 0;
+    --section-footer-align: center;
+}
+
+/* Base
+    ============================= */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0 auto;
+
+}
+
+h1, h2, p {
+    font-family: var(--font-family-base);
+}
+
+a {
+    gap: 41px;
+    color: var(--nav-item-text-color);
+    font-size: var(--nav-item-font-size);
+    text-decoration:var(--nav-item-text-decoration) ;
+}
+
+a:hover {
+    color: var(--nav-item-link-hover);
+}
+
+a:active {
+    color: var(--nav-item-link-hover);
+}
+
+.button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    color: var(--text-color-primary);
+    font-size: var(--button-font-size);
+    background-color: var(--button-color);
+    border-radius: var( --button-border-radius);
+    margin-bottom: 40px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/*** 2. LAYOUT ***/
+
+/* Header
+    ============================= */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--header-margin);
+}
+.header {
+    padding: var(--header-padding);
+    position: relative;
+    z-index: 3;
+    background-image: url("/images/headphones_hero_1.jpg");
+    background-size: var(--background-image-size);
+    background-repeat: var(--background-image-repeat);
+    height: var(--background-image-height);
+    background-position: var(--background-image-position);
+    background-color: var(--background-image-color);
+
+}
+.nav {
+    display: var(--nav-item-display);
+    gap: 41px;
+}
+/*** 3. SECTION ***/
+
+/* Section (all styles)
+    ============================= */
+
+.section {
+    margin: var(--section-margin);
+    width: var(--section-width);
+}
+
+.section-header {
+    text-align: var(--section-header-align);
+    padding: var(--section-header-padding);
+}
+
+.section-title {
+    font-size: var(--section-title-font-size);
+    font-weight: var(--section-title-font-weight);
+    line-height: var(--section-title-line-height);
+    margin: var(--section-title-margin);
+    color: var(--section-title-color);
+}
+
+.section-tagline {
+    color: var(--section-tagline-color);
+    font-size: var(--section-tagline-font-size);
+    font-weight: var(--section-tagline-font-weight);
+    margin: var(--section-tagline-margin);
+}
+
+.section-body {
+    padding: var(--section-body-padding);
+}
+
+.section-footer {
+    padding: var(--section-footer-padding);
+    text-align: var(--section-footer-align);
+    color: var(--section-tagline-color);
+    font-size: var(--section-tagline-font-size) ;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-small);
+}
+.icons {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 58px;
+}
+.row {
+    text-align: var(--section-footer-align);
+    color: var(--text-color-secondary);
+    line-height: var(--line-height-small);
+    width: 207px;
+}
+.row .h2 {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    padding-bottom: 13px;
+}
+.row p {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    padding-bottom: 110px;
+}
+
+.what-we-do {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-what-we-do {
+    color: var(--text-color-secondary);
+    text-align: var(--section-footer-align);
+    width: var(--section-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0;
+    column-gap: 40px;
+    padding: 110px 0;
+}
+.section-what-we-do h1 {
+    font-size: var(--font-size-xx-large);
+    font-weight: var(--font-weight-bold);
+}
+.section-what-we-do p {
+    font-size: var(--section-tagline-font-size);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-small);
+}
+.results {
+    background-image: url("/images/headphones_hero_2.jpg");
+    position: relative;
+    z-index: 3;
+    background-size: var(--background-image-size);
+    background-repeat: var(--background-image-repeat);
+    height: 650px;
+    background-position: var(--background-image-position);
+    background-color: var(--background-image-color);
+    padding: 141px 0 76px 0;
+}
+.section-results {
+    color: var(--text-color-primary);
+    text-align: var(--section-footer-align);
+    width: var(--section-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0;
+    column-gap: 40px;
+    max-width: 1000px;
+    padding-bottom: 56px;
+
+}
+.pent img  {
+
+    height: 190px;
+    width: 190px;
+
+}
+.pent div {
+    text-align: center;
+    margin-top: -160px;
+    color: var(--text-color-primary);
+}
+.pent div h2 {
+    font-size: var(--font-size-xxx-large) ;
+    font-weight: var(--font-weight-bolder);
+
+}
+.pent div p {
+    font-size: var(--font-size-medium) ;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-small);
+
+}
+.section-results h1 {
+    line-height: var(--line-height-small);
+}
+.formContainer {
+    margin-left:auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formInput {
+
+    display: flex;
+    flex-direction: column;
+    width: 335px;
+    height: 373px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+.contact-us {
+    margin-top: 110px;
+    color: var(--color-blue);
+}
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-blue);
+    font-weight: bold;
+    text-align: left;
+}
+
